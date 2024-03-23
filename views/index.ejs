@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="flex gap-10" >
+      <form  class="flex flex-col gap-5 " action="/register" method="post">
+        <input   class="w-60  h-8 bg-zinc-500 text-white outline-0 rounded pl-5 capitalize placeholder:text-white " type="text" placeholder="username" name="username" >
+        <input   class="w-60  h-8 bg-zinc-500 text-white outline-0 rounded pl-5 capitalize placeholder:text-white " type="text" placeholder="email" name="email" >
+        <input   class="w-60  h-8 bg-zinc-500 text-white outline-0 rounded pl-5 capitalize placeholder:text-white " type="text" placeholder="password" name="password" >
+        <input   class="w-60  h-8 bg-blue-500 text-white outline-0 rounded pl-5 capitalize " type="submit" value="button" >
+            </form>
+        
+            <form class="flex flex-col gap-5 " action="/login" method="post">
+              <input   class="w-60  h-8 bg-zinc-500 text-white outline-0 rounded pl-5 capitalize placeholder:text-white " type="text" placeholder="username" name="username" >
+              <input   class="w-60  h-8 bg-zinc-500 text-white outline-0 rounded pl-5 capitalize placeholder:text-white " type="text" placeholder="password" name="password" >
+              <input   class="w-60  h-8 bg-blue-500 text-white outline-0 rounded pl-5 capitalize " type="submit" value="button" >
+        
+            </form>
+    </div>
   </body>
 </html>
