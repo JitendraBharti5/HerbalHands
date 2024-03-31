@@ -19,14 +19,24 @@ const user = await userModel.findOne({
   username:req.session.passport.user
 })
 
-res.send(user.username)
+res.render("home.ejs")
+});
+router.get('/product', function(req, res, next) {
+  res.render('product.ejs' );
+});
+router.get('/createRemedie', function(req, res, next) {
+  res.render('createRemedie.ejs' );
+});
+
+router.get('/remedieSarch', function(req, res, next) {
+  res.render('remedieSarch.ejs' );
 });
 
 
 
 
 router.post("/register",async function(req,res,next ){
-  var userdata = new userModel({
+const userdata = new userModel({
     username :req.body.username,
     email:req.body.email,
     category:req.body.category,

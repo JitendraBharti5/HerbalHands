@@ -1,18 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+ 
+    <style>
+        #main-content{
+    background-color:rgb(200, 232, 200);
+   
+}
+.category.selected {
+    color: rgba(165, 97, 42, 0.873);
+    /* text-decoration: underline; */
+  }
+  .cards img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+ .cards{
+    height: 18vw;
+    width:18vw;
+border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+margin-top: 2vw;
+
+   
+    gap: 4vw;
+  
+
+}
+.cards-wrapper{
+    width: 100%;
+    align-items: center;
+height: 30vw;
+
+  padding: 4vw 4vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5vw;
+}
+.bottom{
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    background: linear-gradient(transparent,black);
+    bottom: -40%;
+    transition: all ease 0.4s;
+    padding: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+}
+.cards:hover .bottom{
+    bottom: 0;
+}
+.bottom h5{
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+    text-align: center;
+    padding: 6px 5px;
+    font-size: 15px;
+    font-weight: 100;
+}
+.bottom h4{
+    font-size: 2vw;
+    color: white;
+    font-weight: 600;
+}
+
+    </style>
 </head>
-<body>
 
+<body class="font-sans bg-gray-100">
 
-    
-    
+    <div id="main" class="overflow-hidden">
+      <div class="page1 w-screen h-screen overflow-hidden " >
+        <nav class="  w-full  h-[5vw] bg-green-700 text-white  flex justify-between items-center px-10 ">
+            <div id="nav-logo" class="h-[5vw] w-[5vw] " >
+              <a href="index.html">  <img src="/images/websiteimages/loho-removebg-preview.png" alt=""></a>
+            </div  >
+            <div id="nav2" class="flex gap-12">
+                <a class="capitalize gilroy text-xl  " href="index.html">home</a>
+                <a class="capitalize gilroy text-xl  " href="remides_dis.html">remedies</a>
+                <a class="capitalize gilroy text-xl  " href="product.html">market place</a>
+                <a class="capitalize gilroy text-xl  " href="community.html">community</a>
+            </div>
+            <div id="nav3" class="flex gap-8 items-center">
+                <a class="capitalize font-[400]  text-lg bg-white text-black px-2 py-1 rounded-full  " href="new_post.html">create a remides</a>
+                
+                <!-- <button class="bg-white text-black rounded-full "> -->
+                   
+                </button>
+                <div id="profile" class="w-[2.4vw] h-[2.4vw] bg-white rounded-full">
+                   <a href="profile.html"> <img src="/images/websiteimages/profile-removebg-preview.png" alt=""></a>
+                </div>
+            </div>
+        </nav>
+        <div id="main-content" class="flex w-screen h-screen ">
+            <div id="left" class="w-[60%] h-[calc( screen - 10)]   pt-[9vw] px-16">
+                <h1 class="text-gray-500 font-semibold text-4xl leading-normal">
+                    Welcome to HERBAL HANDS: Your Rural
+                    Women's Health Hub for homemade remedies, community empowerment, and tailored traditional health
+                    practices, shaping healthier futures together.</h1>
+              
+            </div>
+            <div id="right" class="w-[40%] h-screen  relative pt-[9vw] px-[2vw]">
+                <div id="swiper-div" class=" w-[30vw] h-[30vw]">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="1657607818552.jpeg" alt=""></div>
+                            <div class="swiper-slide"><img src="empower_women.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="Importance-of-herbs-in-daily-life-624x312.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="10-ideas-2-min.jpg" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+        <div id="page2" class=" w-screen h-screen relative">
+            <h1 class=" text-[4vw] font-[300]  text-center text-[#AE7444] mt-[2vw] ">CATEGORY</h1>
+            <div id="categories" class="flex items-center  justify-center gap-[6vw] mt-[2vw]">
+                <h4 class="category" data-category="category1">HEALTH CARE</h4>
+                <h4 class="category" data-category="category2">SKIN CARE</h4>
+                <h4 class="category" data-category="category3">HAIR CARE</h4>
+                <h4 class="category" data-category="category4">CHILD CARE</h4>
+
+            </div>
+            <div id="cards-container" class="w-full   "></div>
+        </div>
+    </div>
+    <footer class="bg-gray-300 h-96 py-8">
+        <div id="vast" class="px-32 flex justify-between items-center border-b-2 border-gray-400">
+            <div id="first">
+                <img src="/images/websiteimages/loho-removebg-preview.png" alt="">
+                <h1 class="text-green-600">HERBAL HANDS</h1>
+            </div>
+            <div id="second" class="flex gap-20">
+                <h4 class="font-semibold cursor-pointer hover:text-orange-600">ABOUT US</h4>
+                <h4 class="font-semibold cursor-pointer hover:text-orange-600">CONTACT US</h4>
+            
+                <h4 class="font-semibold cursor-pointer hover:text-orange-600">HELP & SUPPORT</h4>
+                <h4 class="font-semibold cursor-pointer hover:text-orange-600">PRIVACY POLICY</h4>
+            </div>
+        </div>
+        <div id="down" class="mt-8 ml-32 flex gap-12">
+            <h2 class="text-lg">FOLLOW US ON</h2>
+            <div id="box" class="flex gap-8">
+                <div id="box1" class="w-12 h-12 bg-blue-500 flex justify-center items-center rounded-full">
+                    <i class="ri-facebook-line text-white text-2xl"></i>
+                </div>
+                <div id="box2" class="w-12 h-12 bg-gradient-to-br from-red-500 to-blue-500 flex justify-center items-center rounded-full">
+                    <i class="ri-messenger-line text-white text-2xl"></i>
+                </div>
+                <div id="box3" class="w-12 h-12 bg-gradient-to-br from-yellow-300 to-purple-800 flex justify-center items-center rounded-full">
+                    <i class="ri-instagram-line text-white text-2xl"></i>
+                </div>
+                <div id="box4" class="w-12 h-12 bg-blue-400 flex justify-center items-center rounded-full">
+                    <i class="ri-twitter-line text-white text-2xl"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

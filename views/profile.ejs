@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    .postContainer::-webkit-scrollbar{
+        display: none;
+
+    }
+</style>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4">
+
+        <h1 class="text-center py-[1vw] text-xl text- " >Profile</h1>
+        <div class="flex justify-center">
+            <div class="flex items-center justify-center">
+                <img src="/images/websiteimages/w.png" alt="image" class="border-2 border-black rounded-full h-[10vw] w-[10vw]">
+            </div>
+           
+        </div>
+
+        <div class="flex justify-center  mt-2  gap-4">
+           <input type="text" placeholder="username" class="w-[17vw] h-[3vw] bg-zinc-600 text-white pl-4 rounded-full"  >
+           <input type="text" placeholder="Email" class="w-[17vw] h-[3vw] bg-zinc-600 text-white pl-4 rounded-full" >
+           <input type="text" placeholder="Gender" class="w-[17vw] h-[3vw] bg-zinc-600 text-white pl-4 rounded-full"  >
+        </div>
+
+        <div class="mt-8">
+            <span class="text-2xl font-semibold">Your Previous remedie's</span>
+        </div>
+
+        <div class="postContainer flex overflow-x-auto mt-4   ">
+
+            <!-- Repeat this block for each post card -->
+       
+          
+            <div class="shadow-md bg-green-200  w-[12vw] rounded-lg mx-2 shrink-0 " >
+                <img src="/images/websiteimages/7.jpg" alt="Image description" class="rounded-t-lg w-full">
+                <div class="p-2">
+                    <h3 class="text-lg font-semibold">Stop hair loss in 8days</h3>
+                    <div class="flex justify-center mt-4">
+                        <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-md">View</a>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+
+</html>
