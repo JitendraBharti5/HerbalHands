@@ -31,6 +31,18 @@ router.get('/createRemedie', function(req, res, next) {
 router.get('/remedieSarch', function(req, res, next) {
   res.render('remedieSarch.ejs' );
 });
+router.get('/community', function(req, res, next) {
+  res.render('community.ejs' );
+});
+
+router.get('/profile', function(req, res, next) {
+  res.render('profile.ejs' );
+});
+
+router.get('/remedieSarch', function(req, res, next) {
+  res.render('remedieSarch.ejs' );
+});
+
 
 
 

@@ -126,7 +126,7 @@ function swiper() {
       cardElement.classList.add('cards');
   
       const imgElement = document.createElement('img');
-      imgElement.src = /images/websiteimages/card.image;
+      imgElement.src = card.image;
       imgElement.alt = card.title;
       cardElement.appendChild(imgElement);
   
