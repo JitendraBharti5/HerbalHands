@@ -11,8 +11,8 @@ password:String,
 post:{
     type:mongoose.Schema.Types.ObjectId,
     ref:"remedie"
-
-   }
+   },
+   gender:String
 
     
 })

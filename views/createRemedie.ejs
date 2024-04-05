@@ -14,10 +14,10 @@
 
       
         <h1 class="text-3xl font-bold mb-6 text-center">Create a new remides</h1>
-        <form action="#" class="space-y-4">
+        <form action="/remedieCreate"  method="post" class="space-y-4">
             <div>
                 <label for="title" class="block mb-1">Remedie Title:</label>
-                <input type="text" id="title" name="title" placeholder="Enter a title for your post"
+                <input type="text" id="title" name="RemedieName" placeholder="Enter a title for your post"
                     class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
             </div>
             <div>
@@ -37,8 +37,8 @@
                     class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"></textarea>
             </div>
             <div>
-                <label for="video" class="block mb-1">Choose a file:</label>
-                <input type="file" id="video" name="video" accept="video/images"
+                <label for="image" class="block mb-1">Choose a file:</label>
+                <input type="file" id="image" name="image" 
                     class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
             </div>
             <button type="submit"
