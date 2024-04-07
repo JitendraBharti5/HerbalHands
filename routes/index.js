@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const userModel  = require("./users")
-
+const communityModel = require("./community")
 const remedieModel  = require("./remedie")
 const upload = require("./multer")
 const passport = require("passport")
@@ -28,6 +28,9 @@ res.render("home.ejs",{user,remedie})
 router.get('/product',isLoggedIn,  async function(req, res, next) {
   res.render('product.ejs' );
 });
+router.get('/remedie',isLoggedIn,  async function(req, res, next) {
+  res.render('remedie.ejs' );
+});
 router.get('/createRemedie',isLoggedIn,  async function(req, res, next) {
   res.render('createRemedie.ejs' );
 });
@@ -36,7 +39,12 @@ router.get('/remedieSarch',isLoggedIn,  async function(req, res, next) {
   res.render('remedieSarch.ejs' );
 });
 router.get('/community',isLoggedIn,  async function(req, res, next) {
-  res.render('community.ejs' );
+  const user = await userModel.findOne({
+    username:req.session.passport.user
+  })
+  const common  = await  communityModel.find({}).populate("user")
+
+  res.render('community.ejs',{common,user} );
 });
 
 router.get('/profile',isLoggedIn,  async function(req, res, next) {
@@ -45,9 +53,7 @@ router.get('/profile',isLoggedIn,  async function(req, res, next) {
   }).populate("post")
   
   const remedie = await remedieModel.find({})
-  
-  console.log(user)
-  console.log(remedie)
+
 
 // res.send(user)
   res.render('profile.ejs',{user,remedie} );
@@ -75,7 +81,6 @@ const remedie = await remedieModel.create({
    description:req.body.description,
    image:req.file.filename,
 })
-
 remedie.user = user._id;
 user.post.push(remedie._id);
 
@@ -85,6 +90,17 @@ await remedie.save();
 res.redirect("/home");
 
 });
+router.post('/shareReview',isLoggedIn,upload.single("reviewImage"), async function(req, res, next) {
+  const user = await userModel.findOne({
+    username:req.session.passport.user
+  })
+const community = await communityModel.create({
+  review : req.body.review,
+  reviewImage:req.body.reviewImage
+})
+res.redirect("/community.ejs")
+})
+
 router.post("/searchUser",async function(req, res, next){
   const data = req.body.data
   const allUser = await remedieModel.find({

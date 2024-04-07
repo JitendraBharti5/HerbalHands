@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
@@ -14,6 +16,7 @@
     }
 </style>
 <body class="bg-gray-100">
+    <a href="/back"><i class="ri-arrow-left-s-line  ml-[3vw] my-[2vw] text-zinc-700 text-2xl"></i></a>
     <div class="container mx-auto px-4">
 
         <h1 class="text-center py-[1vw] text-xl text- " >Profile</h1>
@@ -37,7 +40,7 @@
         <div class="postContainer flex overflow-x-auto mt-4   ">
 
             <!-- Repeat this block for each post card -->
-            <%  remedie.forEach((remedie) =>{ %> 
+            <%  user.post.forEach((remedie) =>{ %> 
           
             <div class="shadow-md bg-green-200  w-[12vw] rounded-lg mx-2 shrink-0 " >
                 <img src="/images/uploads/<%= remedie.image %> " alt="Image description" class="rounded-t-lg w-full">

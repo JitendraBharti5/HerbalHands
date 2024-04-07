@@ -12,6 +12,7 @@
     body{
         background-color:rgb(200, 232, 200);
     }
+   
     .right::-webkit-scrollbar{
         display: none;
     }
@@ -24,23 +25,23 @@
             <h1 class="hc text-center text-xl font-bold text-white" > Herbal Community  </h1>
         </div>
         <div class="com mt-[4vw]  flex justify-center">
-            <div class="right w-scren  h-[38vw]   overflow-auto flex  flex-col px-[4vw]">
-                <div class="post w-3/4  py-5">
-                    <div class="up flex items-center justify-between">
+            <div class="right w-scren  h-[38vw]   overflow-auto flex  flex-col ">
+                
+                <% common.forEach((Common) =>{ %>
+                <div class="post w-screen h-[30vw] px-[2vw]  py-5">
+                    <div class="up flex items-center ">
                         <div class="usr  gap-[2vw] flex items-center text-white">
                             <img src="/images/websiteimages/w.png" alt="pro" class="rounded-full w-7 h-7">
-                            <h6 class="font-[400] text-xs lowercase  text-zinc-700 " > RajKumari  </h6>
+                            <h6 class="font-[400] text-xs lowercase  text-zinc-700 " > <%=user.username  %> </h6>
                          
                         </div>
-                     
-                    </div>
+                     </div>
                     <div class="para   ">
-                        <p class=" text-black normal-case text-s font-[400] " >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat doloremque fuga quisquam
-                            asperiores voluptatibus iste et ab. Voluptas hic veritatis, reprehenderit nulla, nostrum sunt
-                            fugit et officiis eveniet, accusantium exercitationem!</p>
+                        <p class=" text-black normal-case text-s font-[400] " ><%=Common.review %></p>
                     </div>
                     <div class="pho">
-                        <img src="/images/websiteimages/7.jpg" alt="image not found" class="w-[15vw] h-[15vw] object-cover">
+                        <img src="/images/uploads/<%= Common.reviewImage %>" alt="image not found" class="w-[15vw] h-[15vw] object-cover">
+                       
                     </div>
                     <div class="act  py-[0.5vw] flex items-center justify-around text-white">
                         <div class="thumb">
@@ -55,53 +56,44 @@
                     </div>
 
                 </div>
-            
-                <div class="post w-3/4  py-5">
-                    <div class="up flex items-center justify-between">
-                        <div class="usr  gap-[2vw] flex items-center text-white">
-                            <img src="/images/websiteimages/w.png" alt="pro" class="rounded-full w-7 h-7">
-                            <h6 class="font-[400] text-xs lowercase  text-zinc-700 " > RajKumari  </h6>
-                         
-                        </div>
-                     
-                    </div>
-                    <div class="para   ">
-                        <p class=" text-black normal-case text-s font-[400] " >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat doloremque fuga quisquam
-                            asperiores voluptatibus iste et ab. Voluptas hic veritatis, reprehenderit nulla, nostrum sunt
-                            fugit et officiis eveniet, accusantium exercitationem!</p>
-                    </div>
-                    <div class="pho">
-                        <img src="/images/websiteimages/7.jpg" alt="image not found" class="w-[15vw] h-[15vw] object-cover">
-                    </div>
-                    <div class="act  py-[0.5vw] flex items-center justify-around text-white">
-                        <div class="thumb">
-                            <i class="ri-heart-3-line text-xl text-black"    ></i>
-                        </div>
-                        <div class="chat">
-                            <i class="ri-chat-3-line text-xl text-black  "     ></i>
-                        </div>
-                        <div class="share">
-                            <i class="ri-share-2-line text-xl text-black  "   ></i>
-                        </div>
-                    </div>
-
-                </div>
-
+                <% })%>
 
                 
-                <div class="add w-full rounded-full flex justify-center pb-[0.7vw]  fixed bottom-0 z-10">
+                <div class="add fixed bottom-0 left-0 z-10 w-full rounded-full flex justify-center pb-[0.7vw]  ">
                     <div class="three flex items-center justify-between bg-white rounded-full w-[80%]">
-                        <input class="text w-[50vw] rounded-full  px-5 py-2 outline-none" type="text" placeholder="write about that you liked">
-                       <div class="flex  gap-[2vw] px-[2vw]">
+                        <form action="/shareReview" method="post" class="reviewForm flex items-center justify-between w-full  " > 
+                            <input class="review text w-[50vw] rounded-full  px-5 py-2 outline-none" name="review" type="text" placeholder="write about that you liked">
+                            <div class="flex  gap-[2vw] px-[2vw]">
+                
+                             <!-- <i id="file" onclick="file()" class="ri-attachment-line  text-2xl  "></i> -->
+                             <input type="file" class="file" name="reviewImage"  >
+                             <input type="submit" value="submit" class="submit" >
+              
+                               </div>
+                        
+                        </form>
+                       
                       
-                        <i class="ri-attachment-line  text-2xl  "></i>
-                        <i class="ri-send-plane-2-line  text-2xl  "></i>
-                       </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+    // function file(){
+    //     document.querySelector(".file").click()
+    // }
+                
+                const response = await axios.post('/shareReview', {
+      
+        
+        })
+        console.log(response)
+
+// 
+
+                
+</script>
 
 </html>
