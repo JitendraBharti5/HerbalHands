@@ -25,9 +25,9 @@
         </div>
 
         <div class="flex justify-center  mt-2  gap-4">
-           <input type="text" placeholder="username" class="w-[17vw] h-[3vw] bg-zinc-600 text-white pl-4 rounded-full"  >
-           <input type="text" placeholder="Email" class="w-[17vw] h-[3vw] bg-zinc-600 text-white pl-4 rounded-full" >
-           <input type="text" placeholder="Gender" class="w-[17vw] h-[3vw] bg-zinc-600 text-white pl-4 rounded-full"  >
+           <input type="text" placeholder="username" class="w-[17vw] h-[3vw] bg-zinc-600 text-white pl-4 rounded-full" value="<%=user.username %>" >
+           <input type="text" placeholder="Email" class="w-[17vw] h-[3vw] bg-zinc-600 text-white pl-4 rounded-full"  value="<%=user.email %> ">
+           <input type="text" placeholder="Gender" class="w-[17vw] h-[3vw] bg-zinc-600 text-white pl-4 rounded-full" value="<%=user.gender %>">
         </div>
 
         <div class="mt-8">
@@ -37,18 +37,18 @@
         <div class="postContainer flex overflow-x-auto mt-4   ">
 
             <!-- Repeat this block for each post card -->
-       
+            <%  remedie.forEach((remedie) =>{ %> 
           
             <div class="shadow-md bg-green-200  w-[12vw] rounded-lg mx-2 shrink-0 " >
-                <img src="/images/websiteimages/7.jpg" alt="Image description" class="rounded-t-lg w-full">
+                <img src="/images/uploads/<%= remedie.image %> " alt="Image description" class="rounded-t-lg w-full">
                 <div class="p-2">
-                    <h3 class="text-lg font-semibold">Stop hair loss in 8days</h3>
+                    <h3 class="text-lg font-semibold"><%= remedie.remedieName %></h3>
                     <div class="flex justify-center mt-4">
                         <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-md">View</a>
                     </div>
                 </div>
             </div>
-            
+            <% })%>
             
         </div>
     </div>

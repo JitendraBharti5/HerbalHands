@@ -73,42 +73,38 @@ function swiper() {
     "category1": {
       "name": "HEALTH CARE",
       "cards": [
-        { "image": "TOOTHACHE.jpg", "title": "TOOTHACHE" },
-        { "image": "Nausea.jpg", "title": "NAUSEA" },
-        { "image": "CONSTIPATION IN CHILDREN.jpg", "title": "CONSTIPATION" },
-        { "image": "cough.png", "title": "COUGH" },
-  
-      ]
+        { "image": "https://www.dabur.com/sites/default/files/styles/320x409/public/2021-09/TOOTHACHE.jpg?itok=OvPbhE7Q", "title": "TOOTHACHE" },
+        { "image": "	https://www.dabur.com/sites/default/files/styles/320x409/public/2021-09/Nausea.jpg?itok=ai6HoRj", "title": "NAUSEA" },
+        { "image": "https://www.dabur.com/sites/default/files/styles/320x409/public/2021-09/CONSTIPATION%20IN%20CHILDREN.jpg?itok=0Q_CHRBv", "title": "CONSTIPATION" },
+        { "image": "https://www.dabur.com/sites/default/files/styles/320x409/public/2021-01/1.png?itok=tHJnTAzp", "title": "COUGH" },
+       ]
     },
     "category2": {
       "name": "SKIN CARE",
       "cards": [
-        { "image": "dry skin.jpg", "title": "DRY SKIN" },
-        { "image": "face mask.jpg", "title": "FACE MASK" },
-        { "image": "massage oil.jpg", "title": "MASSAGE OIL" },
-        { "image": "ACNE.jpg", "title": "ACNE" },
-  
-      ]
+        { "image": "https://www.dabur.com/sites/default/files/styles/320x409/public/2021-09/dry%20skin.jpg?itok=xhh4KmUl", "title": "DRY SKIN" },
+        { "image": "https://www.dabur.com/sites/default/files/styles/320x409/public/2021-09/face%20mask.jpg?itok=KMIjZyW5", "title": "FACE MASK" },
+        { "image": "https://www.dabur.com/sites/default/files/styles/320x409/public/2021-09/massage%20oil.jpg?itok=f-mol90t", "title": "MASSAGE OIL" },
+        { "image": "https://www.dabur.com/sites/default/files/styles/320x409/public/2021-09/ACNE.jpg?itok=6Mkhh_Gx", "title": "ACNE" },
+         ]
     },
     "category3": {
       "name": "HAIR CARE",
       "cards": [
-        { "image": "Dandruff.jpg", "title": "DANDRUFF" },
-        { "image": "Restorative Hair Oil.jpg", "title": "RESTORATIVE HAIR OIL" },
-        { "image": "Nourishing Hair Oil.jpg", "title": "NOURISHING HAIR OIL" },
-        { "image": "Herbal Shampoos.jpg", "title": "HERBAL SHAMPOOS" },
-  
-      ]
+        { "image": "https://www.dabur.com/sites/default/files/styles/320x409/public/2021-09/Dandruff.jpg?itok=UOjsBoo1", "title": "DANDRUFF" },
+        { "image": "https://www.dabur.com/sites/default/files/styles/320x409/public/2021-09/Restorative%20Hair%20Oil.jpg?itok=4R3tNTKE", "title": "RESTORATIVE HAIR OIL" },
+        { "image": "https://www.dabur.com/sites/default/files/styles/320x409/public/2021-09/Nourishing%20Hair%20Oil.jpg?itok=iTI301kr", "title": "NOURISHING HAIR OIL" },
+        { "image": "https://www.dabur.com/sites/default/files/styles/320x409/public/2021-09/Herbal%20Shampoos.jpg?itok=C4FImyii", "title": "HERBAL SHAMPOOS" },
+        ]
     },
     "category4": {
       "name": "CHILD CARE",
       "cards": [
-        { "image": "Summer Care.jpg", "title": "SUMMER CARE" },
-        { "image": "Weaning Diets.jpg", "title": "WEANING DIETS" },
-        { "image": "WHAT IS INDIGESTION.jpg", "title": "DIGESTION PROBLEM" },
-        { "image": "DIARRHEA MEANING (1).jpg", "title": "DIARRHEA" },
-  
-      ]
+        { "image": "https://www.dabur.com/sites/default/files/styles/320x409/public/2021-09/Summer%20Care.jpg?itok=Lq31KEr7", "title": "SUMMER CARE" },
+        { "image": "https://www.dabur.com/sites/default/files/styles/320x409/public/2021-09/Weaning%20Diets.jpg?itok=eBfP3tb_", "title": "WEANING DIETS" },
+        { "image": "https://www.dabur.com/sites/default/files/styles/320x409/public/2021-09/WHAT%20IS%20INDIGESTION.jpg?itok=OBV1Lkca", "title": "DIGESTION PROBLEM" },
+        { "image": "https://www.dabur.com/sites/default/files/styles/320x409/public/2021-09/DIARRHEA%20MEANING%20%281%29.jpg?itok=RJJxvZxL", "title": "DIARRHEA" },
+           ]
     }
   };
   

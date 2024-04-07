@@ -5,7 +5,7 @@ const plm = require("passport-local-mongoose")
 
 
 const remedieSchema = mongoose.Schema({
- RemedieName:String,
+ remedieName:String,
    user:{
     type:mongoose.Schema.Types.ObjectId,
     ref:"user"

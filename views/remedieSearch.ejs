@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remedies</title>
-   
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
@@ -21,12 +21,14 @@
       </div  >
       <div id="nav2" class="flex gap-12">
         <a class="capitalize gilroy text-xl  " href="/home">home</a>
-                <a class="capitalize gilroy text-xl  " href="/remedieSarch">remedies</a>
+                <a class="capitalize gilroy text-xl  " href="/remedieSearch">remedies</a>
                 <a class="capitalize gilroy text-xl  " href="/product">market place</a>
                 <a class="capitalize gilroy text-xl  " href="/community">community</a>
       </div>
       <div id="nav3" class="flex gap-8 items-center">
-          
+                
+        <a class="capitalize font-[400]  text-lg bg-white text-black px-2 py-1 rounded-full  " href="/createRemedie">create a remides</a>
+                
           <!-- <button class="bg-white text-black rounded-full "> -->
              
           </button>
@@ -35,32 +37,41 @@
           </div>
       </div>
   </nav>
-<div class="card-container flex-col gap-2 flex px-[3vw] py-[4vw]"   >
+<div class="w-screen h-11 flex items-center justify-center" >
+  <div class="pl-5 gap-2 flex  items-center mt-5 ml-10 w-[40vw]  h-10 rounded-full  bg-white border  border-gray-400">
+    <i class="ri-search-line"></i> 
+     <input  id="searchUser" class=" outline-none w-[90%] h-8 pl-4 rounded-full" type="text" placeholder="search">
+ </div>
+</div>
  
+
+<div class="card-container flex-col gap-2 flex px-[3vw] py-[4vw]"   >
+  <%  remedie.forEach((remedie) =>{ %> 
 <div class="card text-center w-[100%] h-[20vw] flex items-center justify-between px-[7vw]  "  >
   
 <div class="flex flex-col items-center justify-between ">
   <div class="imgContain  w-[13vw] h-[13vw] mt-4   " >
-  <img class="w-full h-full object-fit" src="/images/websiteimages/7.jpg" alt="">
+  <img class="w-full h-full object-fit" src="/images/uploads/<%= remedie.image %> " alt="">
  
 </div>
 <div class="upload_user mt-[2vw] flex items-center justify-center gap-2 ">
   <div class="h-[2vw] w-[2vw] ">
     <img class=" h-full w-full object-fit rounded-full" src="/images/websiteimages/w.png" alt="*">
   </div>
-    <button class="up_user">Geeta</button>
+    <button class="up_user"><%= user.username %></button>
     
   </div>
 </div>
 <div>
-  <h3>Stop hair loss in 8days</h3>
-      <div class="dis mt-[2vw]">
-        <p>Lorem ipsum Lorem ipsum dolor sit amet. amet, consectetur adipisicing elit <br> Qui, voluptate fugiat. Sunt beatae eaque minima!</p>
+  <h3><%= remedie.remedieName %></h3>
+      <div class="dis mt-[2vw] w-[40vw] ">
+        <p><%=remedie. description %></p>
       </div>
      
       
 </div>
 </div>
+<% })%>
 </div>
 
 </div>
@@ -70,10 +81,36 @@
 
 </div>
    
-   
     
 
      
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+    <script>
+         document.querySelector('#searchUser').addEventListener('input', async (event) => {
+    
+        const data = document.querySelector("#searchUser").value
+  
+        const searchinput = document.querySelector("#searchUser")
+  
+  const input = searchinput.value.trim()
+  
+
+        const response = await axios.post('/searchUser', {
+          data: data
+        
+        })
+    
+         response.data.forEach(function( data ){
+  
+      console.log(data)
+       });
+  
+   
+      
+      })
+    
+    </script>
 </body>
 </html>

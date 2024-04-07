@@ -1,8 +1,10 @@
 
 
-user login 
-user create post :- image or video and details in text from 
-user search post 
-user share review in comments form  and like them 
-////////////////////////////////////////////////////////////
+// user login 
+// user create post :- image or video and details in text from 
+// user search post 
+// user share review in comments form  and like them 
+// ////////////////////////////////////////////////////////////
 
+// <!-- <%  remedie.forEach((remedie) =>{ %> -->
+//     <% })%>
