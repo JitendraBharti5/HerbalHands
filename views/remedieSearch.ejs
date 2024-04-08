@@ -1,119 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remedies</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remedies</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
-  .main{
+  .main {
     overflow-x: hidden;
   }
-   .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
 </style>
+
 <body>
 
   <div class="main w-screen h-screen">
     <nav class="  w-full  h-[5vw] bg-green-700 text-white  flex justify-between items-center px-10 ">
-      <div id="nav-logo" class="h-[5vw] w-[5vw] " >
-        <a href="/home">  <img src="/images/websiteimages/loho-removebg-preview.png" alt=""></a>
-      </div  >
+      <div id="nav-logo" class="h-[5vw] w-[5vw] ">
+        <a href="/home"> <img src="/images/websiteimages/loho-removebg-preview.png" alt=""></a>
+      </div>
       <div id="nav2" class="flex gap-12">
         <a class="capitalize gilroy text-xl  " href="/home">home</a>
-                <a class="capitalize gilroy text-xl  " href="/remedieSearch">remedies</a>
-                <a class="capitalize gilroy text-xl  " href="/product">market place</a>
-                <a class="capitalize gilroy text-xl  " href="/community">community</a>
+        <a class="capitalize gilroy text-xl  " href="/remedieSearch">remedies</a>
+        <a class="capitalize gilroy text-xl  " href="/product">market place</a>
+        <a class="capitalize gilroy text-xl  " href="/community">community</a>
       </div>
       <div id="nav3" class="flex gap-8 items-center">
-                
-        <a class="capitalize font-[400]  text-lg bg-white text-black px-2 py-1 rounded-full  " href="/createRemedie">create a remides</a>
-                
-          <!-- <button class="bg-white text-black rounded-full "> -->
-             
-          </button>
-          <div id="profile" class="w-[2.4vw] h-[2.4vw] bg-white rounded-full">
-            <a href="/profile"> <img src="/images/websiteimages/profile-removebg-preview.png" alt=""></a>
-          </div>
+
+        <a class="capitalize font-[400]  text-lg bg-white text-black px-2 py-1 rounded-full  "
+          href="/createRemedie">create a remides</a>
+
+        <!-- <button class="bg-white text-black rounded-full "> -->
+
+        </button>
+        <div id="profile" class="w-[2.4vw] h-[2.4vw] bg-white rounded-full">
+          <a href="/profile"> <img src="/images/websiteimages/profile-removebg-preview.png" alt=""></a>
+        </div>
       </div>
-  </nav>
-<div class="w-screen h-11 flex items-center justify-center" >
-  <div class="pl-5 gap-2 flex  items-center mt-5 ml-10 w-[40vw]  h-10 rounded-full  bg-white border  border-gray-400">
-    <i class="ri-search-line"></i> 
-     <input  id="searchUser" class=" outline-none w-[90%] h-8 pl-4 rounded-full" type="text" placeholder="search">
- </div>
-</div>
- 
-
-<div class="card-container flex-col gap-2 flex px-[3vw] py-[4vw]"   >
-  <%  remedie.forEach((remedie) =>{ %> 
-<div class="card text-center w-[100%] h-[20vw] flex items-center justify-between px-[7vw]  "  >
-  
-<div class="flex flex-col items-center justify-between ">
-  <div class="imgContain  w-[13vw] h-[13vw] mt-4   " >
-  <img class="w-full h-full object-fit" src="/images/uploads/<%= remedie.image %> " alt="">
- 
-</div>
-<div class="upload_user mt-[2vw] flex items-center justify-center gap-2 ">
-  <div class="h-[2vw] w-[2vw] ">
-    <img class=" h-full w-full object-fit rounded-full" src="/images/websiteimages/w.png" alt="*">
-  </div>
-    <button class="up_user"><%= user.username %></button>
-    
-  </div>
-</div>
-<div>
-  <h3><%= remedie.remedieName %></h3>
-      <div class="dis mt-[2vw] w-[40vw] ">
-        <p><%=remedie. description %></p>
+    </nav>
+    <div class="w-screen h-11 flex items-center justify-center">
+      <div
+        class="pl-5 gap-2 flex  items-center mt-5 ml-10 w-[40vw]  h-10 rounded-full  bg-white border  border-gray-400">
+        <i class="ri-search-line"></i>
+        <input id="searchUser" class=" outline-none w-[90%] h-8 pl-4 rounded-full" type="text" placeholder="search">
       </div>
-     
-      
-</div>
-</div>
-<% })%>
-</div>
-
-</div>
-
-</div>
- 
-
-</div>
-   
-    
-
-     
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
-    <script>
-         document.querySelector('#searchUser').addEventListener('input', async (event) => {
-    
-        const data = document.querySelector("#searchUser").value
-  
-        const searchinput = document.querySelector("#searchUser")
-  
-  const input = searchinput.value.trim()
-  
 
-        const response = await axios.post('/searchUser', {
-          data: data
-        
-        })
-    
-         response.data.forEach(function( data ){
+
+    <div id="con" class="card-container flex-col gap-2 flex px-[3vw] py-[4vw]">
+      <% remedie.forEach((remedie)=>{ %>
+        <div class="card text-center w-[100%] h-[20vw] flex items-center justify-between px-[7vw]  ">
+
+          <div class="flex flex-col items-center justify-between ">
+            <div class="imgContain  w-[13vw] h-[13vw] mt-4   ">
+              <img class="w-full h-full object-fit" src="/images/uploads/<%= remedie.image %> " alt="">
+
+            </div>
+            <div class="upload_user mt-[2vw] flex items-center justify-center gap-2 ">
+              <div class="h-[2vw] w-[2vw] ">
+                <img class=" h-full w-full object-fit rounded-full" src="/images/websiteimages/w.png" alt="*">
+              </div>
+              <button class="up_user">
+                <%= user.username %>
+              </button>
+
+            </div>
+          </div>
+          <div>
+            <h3>
+              <%= remedie.remedieName %>
+            </h3>
+            <div class="dis mt-[2vw] w-[40vw] ">
+              <p>
+                <%=remedie. description %>
+              </p>
+            </div>
+
+
+          </div>
+        </div>
+        <% })%>
+    </div>
+
+  </div>
+
+  </div>
+
+
+  </div>
+
+
+
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"
+    integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    document.querySelector('#searchUser').addEventListener('input', async (event) => {
+
+      const d = document.querySelector("#searchUser").value
+
+      const searchinput = document.querySelector("#searchUser")
+
+      const input = searchinput.value.trim()
+    var remideData = [];
+      try {
+
+      var { data } = await axios.get(`/searchUser/${d}`)
+        remideData = data
+      } catch (error) {
+        var { data } = await axios.get(`/get/all`);
+        remideData = data;
+
+      }
+
+      var clutter = ""
+      remideData?.forEach(function (elem) {
+
+        clutter += `<div class="card text-center w-[100%] h-[20vw] flex items-center justify-between px-[7vw]  "  >
   
-      console.log(data)
-       });
-  
+  <div class="flex flex-col items-center justify-between ">
+    <div class="imgContain  w-[13vw] h-[13vw] mt-4   " >
+    <img class="w-full h-full object-fit" src="/images/uploads/${elem.image} " alt="">
    
+  </div>
+  <div class="upload_user mt-[2vw] flex items-center justify-center gap-2 ">
+    <div class="h-[2vw] w-[2vw] ">
+      <img class=" h-full w-full object-fit rounded-full" src="/images/websiteimages/w.png" alt="*">
+    </div>
+      <button class="up_user">${elem.name}</button>
       
-      })
-    
-    </script>
+    </div>
+  </div>
+  <div>
+    <h3> ${elem.remedieName}</h3>
+        <div class="dis mt-[2vw] w-[40vw] ">
+          <p>${elem.description}</p>
+        </div>
+       
+        
+  </div>
+  </div>`
+      });
+
+   document.querySelector("#con").innerHTML= clutter;
+   
+    })
+
+  </script>
 </body>
+
 </html>

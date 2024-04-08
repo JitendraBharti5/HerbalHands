@@ -11,11 +11,12 @@ review:String,
     type:mongoose.Schema.Types.ObjectId,
     ref:"user"
    },
-   like:{
-    type:Number,
-    default:0,
-  
-},
+   like:[{
+    type : mongoose.Schema.Types.ObjectId,
+    ref : 'user'
+  }
+ 
+],
 })
 communitySchema.plugin(plm)
 module.exports = mongoose.model("community",communitySchema)

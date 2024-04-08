@@ -44,13 +44,19 @@
                        
                     </div>
                     <div class="act  py-[0.5vw] flex items-center justify-around text-white">
-                        <div class="thumb">
-                            <i class="ri-heart-3-line text-xl text-black"    ></i>
+                        <div class="thumb">  
+                            <%  if(Common.like.indexOf(user._id) === -1) { %>    
+                                <a href="/like/<%=Common._id %>"> <i class="ri-heart-3-line text-xl text-black"    >common.like.length</i></a>
+
+                                <%  } else{ %>
+                                    <a href="/like/<%=Common._id %>"> <i class="ri-heart-3-fill text-xl text-black"    >common.like.length</i></a>
+                                    <%  }  %>  
+                    
                         </div>
                         <div class="chat">
                             <i class="ri-chat-3-line text-xl text-black  "     ></i>
                         </div>
-                        <div class="share">
+                        <div class="share" onclick="shareOnWhatsApp('<%= Common._id %>')">
                             <i class="ri-share-2-line text-xl text-black  "   ></i>
                         </div>
                     </div>
@@ -61,15 +67,14 @@
                 
                 <div class="add fixed bottom-0 left-0 z-10 w-full rounded-full flex justify-center pb-[0.7vw]  ">
                     <div class="three flex items-center justify-between bg-white rounded-full w-[80%]">
-                        <form action="/shareReview" method="post" class="reviewForm flex items-center justify-between w-full  " > 
+                        <form action="/sharereview" method="post"  enctype="multipart/form-data"  class="reviewForm flex items-center justify-between w-full  " > 
                             <input class="review text w-[50vw] rounded-full  px-5 py-2 outline-none" name="review" type="text" placeholder="write about that you liked">
-                            <div class="flex  gap-[2vw] px-[2vw]">
+                            <!-- <div class="flex  gap-[2vw] px-[2vw]">
                 
-                             <!-- <i id="file" onclick="file()" class="ri-attachment-line  text-2xl  "></i> -->
-                             <input type="file" class="file" name="reviewImage"  >
-                             <input type="submit" value="submit" class="submit" >
-              
-                               </div>
+                                
+                            </div> -->
+                            <input type="file" class="file" name="image"  >
+                            <input type="submit" value="submit" class="submit" >
                         
                         </form>
                        
@@ -85,14 +90,18 @@
     //     document.querySelector(".file").click()
     // }
                 
-                const response = await axios.post('/shareReview', {
+        //         const response = await axios.post('/shareReview', {
       
         
-        })
-        console.log(response)
+        // })
+        // console.log(response)
 
 // 
-
+function shareOnWhatsApp(id) {
+  var message = encodeURIComponent(`localhost:3000/community/${id}`); // Encode the message
+  var whatsappUrl = "https://api.whatsapp.com/send?text=" + message;
+  window.open(whatsappUrl, "_blank");
+}
                 
 </script>
 
